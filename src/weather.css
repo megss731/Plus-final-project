@@ -1,0 +1,39 @@
+.weather-app {
+  max-width: 600px;
+  text-align: left;
+  margin: 50px auto;
+  border: 2px solid #0c6456;
+  border-radius: 10px;
+  padding: 15px;
+}
+h1 {
+  @font-face {
+    font-family: HarryPotter;
+    src: url("HarryPotter-ov4z.ttf");
+  }
+}
+.col-5 img {
+  max-width: 50px;
+  margin-right: 10px;
+}
+.col-2 img {
+  max-width: 150px;
+  padding-right: 20px;
+  margin-right: 0;
+}
+strong {
+  font-size: 25px;
+  line-height: 1;
+  font-size: 40px;
+  font-weight: lighter;
+}
+small {
+  position: absolute;
+}
+ul {
+  list-style: none;
+  padding: 0;
+}
+.fAndC {
+  font-size: small;
+}
