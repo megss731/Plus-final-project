@@ -33,6 +33,7 @@ small {
 ul {
   list-style: none;
   padding: 0;
+  text-transform: capitalize;
 }
 .fAndC {
   font-size: small;

@@ -11,15 +11,17 @@
       integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
       crossorigin="anonymous"
     />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
     <link rel="stylesheet" href="src/weather.css" />
   </head>
   <body>
     <div class="container">
       <div class="weather-app">
-      <h1>Raleigh, NC</h1>
+      <h1 id="city"></h1>
       <ul>
         <li>Sunday 4:00pm</li>
-        <li>Sunny</li>
+        <li id="conditions"></li>
       </ul>
       <ul>
         <div class="row">
@@ -31,7 +33,7 @@
             class="float-left"
           />
           <span class="float-left">
-          <strong>70</strong>
+          <strong id="temperature-main">70</strong>
           <small>
           °F | <a href="#">°C</a>
           </small>
@@ -40,7 +42,7 @@
         </div>
         <div class="col-4">
           <ul>
-            <li>Humidity: 26%</li>
+            <li>Humidity: <span class="humidity"></span>%</li>
             <li>Precipitation: 10%</li>
           </ul>
         </div>
