@@ -18,11 +18,19 @@
   <body>
     <div class="container">
       <div class="weather-app">
+        <div class="row">
+          <div class="col-6">
       <h1 id="city"></h1>
       <ul>
         <li id="day-time"></li>
         <li id="conditions"></li>
       </ul>
+      </div>
+      <span class="col-2" id="fun-pic">
+        
+        <img src="file:///C:/Users/megan/Downloads/undraw_Weather_app_re_kcb1.svg" alt="weather weather-app">
+      </span>
+      </div>
       <ul>
         <div class="row">
         <div class="col-5">
@@ -38,25 +46,34 @@
           <small>
           °F | <a href="#">°C</a>
           </small>
-          </span>
-        </div>
-        </div>
+        </span>
+      </div>
+    </div>
         <div class="col-4">
           <ul>
             <li>Humidity: <span id="humidity"></span>%</li>
             <li>Precipitation: 10%</li>
           </ul>
         </div>
-        <div class="col-2">
-          <img src="file:///C:/Users/megan/Downloads/undraw_Weather_app_re_kcb1.svg" alt="weather weather-app">
+        <form id="search-city" class="nb-3">
+          <div class="row">
+            <div class="col-5">
+              <input type="search" 
+               class="form-control"
+               placeholder="Type city..."
+               />
+
+            </div>
+            <div class="col-2">
+              <input type="submit"
+              value="Search"
+              class="btn btn-success"/>
+            </div>
+          </div>
+        </form>
         </div>
-        
-      </div>
     </div>
   </div>
-  <div>
-    Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
-    </div>
     <script src="src/weather.js"></script>
     </html>
   </body>
