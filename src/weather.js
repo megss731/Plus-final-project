@@ -1,7 +1,3 @@
-let apiKey = "e89e31a1e21f0e5098fdecba081e5d67";
-let city = "Raleigh";
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`;
-
 function getTemp(response) {
   let mainTemp = document.querySelector("#temperature-main");
   mainTemp.innerHTML = Math.round(response.data.main.temp);
@@ -38,4 +34,19 @@ function getDayAndTime(timestamp) {
   let day = days[date.getDay()];
   return `${day}, ${hours}:${minutes}`;
 }
-axios.get(apiUrl).then(getTemp);
+function searchForCity(city) {
+  let apiKey = "e89e31a1e21f0e5098fdecba081e5d67";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`;
+  axios.get(apiUrl).then(getTemp);
+}
+function getCityInput(event) {
+  event.preventDefault();
+  let inputCity = document.querySelector("#input-city");
+  searchForCity(inputCity.value);
+}
+searchForCity("New York");
+
+let form = document.querySelector("#search-city");
+form.addEventListener("submit", getCityInput);
+
+// 3:15 into video starts explaining how to make the search box work
