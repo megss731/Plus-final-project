@@ -48,12 +48,16 @@ function getCityInput(event) {
 
 function displayTempCelsius(event) {
   event.preventDefault();
+  farenheitLink.classList.remove("active");
+  celsiusLink.classList.add("active");
   let temperatureMain = document.querySelector("#temperature-main");
   let celsiusTemp = (farenheitTemp - 32) / 1.8;
   temperatureMain.innerHTML = Math.round(celsiusTemp);
 }
 function displayTempFarenheit(event) {
   event.preventDefault();
+  celsiusLink.classList.remove("active");
+  farenheitLink.classList.add("active");
   let temperatureMain = document.querySelector("#temperature-main");
   temperatureMain.innerHTML = Math.round(farenheitTemp);
 }

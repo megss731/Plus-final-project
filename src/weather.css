@@ -31,12 +31,19 @@ strong {
 }
 small {
   position: absolute;
+  text-decoration: none;
 }
 ul {
   list-style: none;
   padding: 0;
   text-transform: capitalize;
 }
-.fAndC {
-  font-size: small;
+
+.celsius-farenheit-temps .active {
+  color: black;
+  cursor: default;
+  text-decoration: none;
+}
+.celsius-farenheit-temps .active:hover {
+  text-decoration: none;
 }
