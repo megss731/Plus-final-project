@@ -31,7 +31,6 @@ strong {
 }
 small {
   position: absolute;
-  text-decoration: none;
 }
 ul {
   list-style: none;
@@ -46,4 +45,7 @@ ul {
 }
 .celsius-farenheit-temps .active:hover {
   text-decoration: none;
+}
+.credit {
+  text-align: center;
 }
