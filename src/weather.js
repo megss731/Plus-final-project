@@ -15,6 +15,7 @@ function getTemp(response) {
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   icon.setAttribute("alt", "response.data.weather[0].main");
+  farenheitTemp = response.data.main.temp;
 }
 function getDayAndTime(timestamp) {
   let date = new Date(timestamp);
@@ -44,9 +45,28 @@ function getCityInput(event) {
   let inputCity = document.querySelector("#input-city");
   searchForCity(inputCity.value);
 }
-searchForCity("New York");
+
+function displayTempCelsius(event) {
+  event.preventDefault();
+  let temperatureMain = document.querySelector("#temperature-main");
+  let celsiusTemp = (farenheitTemp - 32) / 1.8;
+  temperatureMain.innerHTML = Math.round(celsiusTemp);
+}
+function displayTempFarenheit(event) {
+  event.preventDefault();
+  let temperatureMain = document.querySelector("#temperature-main");
+  temperatureMain.innerHTML = Math.round(farenheitTemp);
+}
+let farenheitTemp = null;
 
 let form = document.querySelector("#search-city");
 form.addEventListener("submit", getCityInput);
 
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", displayTempCelsius);
+
+let farenheitLink = document.querySelector("#farenheit-link");
+farenheitLink.addEventListener("click", displayTempFarenheit);
+
+searchForCity("New York");
 // 3:15 into video starts explaining how to make the search box work
