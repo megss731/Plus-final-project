@@ -16,6 +16,7 @@ function getTemp(response) {
   );
   icon.setAttribute("alt", "response.data.weather[0].main");
   farenheitTemp = response.data.main.temp;
+  getForecast(response.data.coord);
 }
 function getDayAndTime(timestamp) {
   let date = new Date(timestamp);
@@ -61,6 +62,11 @@ function displayTempFarenheit(event) {
   let temperatureMain = document.querySelector("#temperature-main");
   temperatureMain.innerHTML = Math.round(farenheitTemp);
 }
+function getForecast(coordinates) {
+  let apiKey = "e89e31a1e21f0e5098fdecba081e5d67";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=imperial`;
+  axios.get(apiUrl).then(displayForecast);
+}
 function displayForecast() {
   let futureForecast = document.querySelector("#forecast");
   let days = ["Fri", "Sat", "Sun", "Mon", "Tues"];
@@ -99,5 +105,4 @@ let farenheitLink = document.querySelector("#farenheit-link");
 farenheitLink.addEventListener("click", displayTempFarenheit);
 
 searchForCity("New York");
-displayForecast();
 // 3:15 into video starts explaining how to make the search box work
