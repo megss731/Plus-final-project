@@ -15,7 +15,7 @@ function getTemp(response) {
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   icon.setAttribute("alt", "response.data.weather[0].main");
-  farenheitTemp = response.data.main.temp;
+  fahrenheitTemp = response.data.main.temp;
   let feelsLike = document.querySelector("#feels-like");
   feelsLike.innerHTML = Math.round(response.data.main.feels_like);
   getForecast(response.data.coord);
@@ -49,20 +49,9 @@ function getCityInput(event) {
   searchForCity(inputCity.value);
 }
 
-// function displayTempCelsius(event) {
-//   event.preventDefault();
-//   farenheitLink.classList.remove("active");
-//   celsiusLink.classList.add("active");
-//   let temperatureMain = document.querySelector("#temperature-main");
-//   let celsiusTemp = (farenheitTemp - 32) / 1.8;
-//   temperatureMain.innerHTML = Math.round(celsiusTemp);
-// }
-function displayTempFarenheit(event) {
-  //   event.preventDefault();
-  //   celsiusLink.classList.remove("active");
-  //   farenheitLink.classList.add("active");
+function displayTempFahrenheit(event) {
   let temperatureMain = document.querySelector("#temperature-main");
-  temperatureMain.innerHTML = Math.round(farenheitTemp);
+  temperatureMain.innerHTML = Math.round(fahrenheitTemp);
 }
 function getForecast(coordinates) {
   let apiKey = "e89e31a1e21f0e5098fdecba081e5d67";
@@ -106,15 +95,9 @@ function displayForecast(response) {
   forecastHTML = forecastHTML + `</div>`;
   futureForecast.innerHTML = forecastHTML;
 }
-let farenheitTemp = null;
+let fahrenheitTemp = null;
 
 let form = document.querySelector("#search-city");
 form.addEventListener("submit", getCityInput);
-
-// let celsiusLink = document.querySelector("#celsius-link");
-// celsiusLink.addEventListener("click", displayTempCelsius);
-
-// let farenheitLink = document.querySelector("#farenheit-link");
-// farenheitLink.addEventListener("click", displayTempFarenheit);
 
 searchForCity("New York");
