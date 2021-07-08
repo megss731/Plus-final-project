@@ -16,6 +16,8 @@ function getTemp(response) {
   );
   icon.setAttribute("alt", "response.data.weather[0].main");
   farenheitTemp = response.data.main.temp;
+  let feelsLike = document.querySelector("#feels-like");
+  feelsLike.innerHTML = Math.round(response.data.main.feels_like);
   getForecast(response.data.coord);
 }
 function getDayAndTime(timestamp) {
@@ -47,18 +49,18 @@ function getCityInput(event) {
   searchForCity(inputCity.value);
 }
 
-function displayTempCelsius(event) {
-  event.preventDefault();
-  farenheitLink.classList.remove("active");
-  celsiusLink.classList.add("active");
-  let temperatureMain = document.querySelector("#temperature-main");
-  let celsiusTemp = (farenheitTemp - 32) / 1.8;
-  temperatureMain.innerHTML = Math.round(celsiusTemp);
-}
+// function displayTempCelsius(event) {
+//   event.preventDefault();
+//   farenheitLink.classList.remove("active");
+//   celsiusLink.classList.add("active");
+//   let temperatureMain = document.querySelector("#temperature-main");
+//   let celsiusTemp = (farenheitTemp - 32) / 1.8;
+//   temperatureMain.innerHTML = Math.round(celsiusTemp);
+// }
 function displayTempFarenheit(event) {
-  event.preventDefault();
-  celsiusLink.classList.remove("active");
-  farenheitLink.classList.add("active");
+  //   event.preventDefault();
+  //   celsiusLink.classList.remove("active");
+  //   farenheitLink.classList.add("active");
   let temperatureMain = document.querySelector("#temperature-main");
   temperatureMain.innerHTML = Math.round(farenheitTemp);
 }
@@ -109,11 +111,10 @@ let farenheitTemp = null;
 let form = document.querySelector("#search-city");
 form.addEventListener("submit", getCityInput);
 
-let celsiusLink = document.querySelector("#celsius-link");
-celsiusLink.addEventListener("click", displayTempCelsius);
+// let celsiusLink = document.querySelector("#celsius-link");
+// celsiusLink.addEventListener("click", displayTempCelsius);
 
-let farenheitLink = document.querySelector("#farenheit-link");
-farenheitLink.addEventListener("click", displayTempFarenheit);
+// let farenheitLink = document.querySelector("#farenheit-link");
+// farenheitLink.addEventListener("click", displayTempFarenheit);
 
 searchForCity("New York");
-// 3:15 into video starts explaining how to make the search box work
