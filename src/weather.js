@@ -61,6 +61,32 @@ function displayTempFarenheit(event) {
   let temperatureMain = document.querySelector("#temperature-main");
   temperatureMain.innerHTML = Math.round(farenheitTemp);
 }
+function displayForecast() {
+  let futureForecast = document.querySelector("#forecast");
+  let days = ["Fri", "Sat", "Sun", "Mon", "Tues"];
+  let forecastHTML = `<div class="row">`;
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `<div class="col-2">
+              <div class="week-day">${day}</div>
+              <div class="future-icon">
+                <img src="http://openweathermap.org/img/wn/04d@2x.png" width=50 alt="future forecast"/>
+              </div>
+              <div class="high-low-temps">
+                <span class="high-temp">
+                  90°
+                </span>
+                <span class="low-temp">
+                  40°
+                </span>
+              </div>
+            </div>
+    `;
+  });
+  forecastHTML = forecastHTML + `</div>`;
+  futureForecast.innerHTML = forecastHTML;
+}
 let farenheitTemp = null;
 
 let form = document.querySelector("#search-city");
@@ -73,4 +99,5 @@ let farenheitLink = document.querySelector("#farenheit-link");
 farenheitLink.addEventListener("click", displayTempFarenheit);
 
 searchForCity("New York");
+displayForecast();
 // 3:15 into video starts explaining how to make the search box work

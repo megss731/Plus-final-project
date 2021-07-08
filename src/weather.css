@@ -5,23 +5,23 @@
   border: 2px solid #0c6456;
   border-radius: 10px;
   padding: 15px;
+  color: #157347;
+  background: radial-gradient(
+    401px at 50.6% -0.3%,
+    rgba(255, 255, 255, 0.31) 1.2%,
+    rgb(36, 212, 219) 100.2%
+  );
 }
-h1 {
-  @font-face {
-    font-family: HarryPotter;
-    src: url("HarryPotter-ov4z.ttf");
-  }
-}
+
 .col-5 img {
   max-width: 50px;
   margin-right: 10px;
 }
-.col-2 img {
+.weather-man {
   max-width: 200px;
   padding-right: 20px;
   padding-left: 20px;
-  margin-right: 0;
-  margin-left: 50px;
+  margin-right: 50px;
 }
 strong {
   font-size: 25px;
@@ -48,4 +48,25 @@ ul {
 }
 .credit {
   text-align: center;
+}
+.future-forecast {
+  text-align: center;
+  padding: 10px;
+  color: #157347;
+}
+.future-icon {
+  margin-left: 0;
+  max-width: 15px;
+  display: inline;
+}
+.week-day {
+  font-size: 16px;
+}
+.high-temp {
+  font-size: 14px;
+  font-weight: bold;
+}
+.low-temp {
+  font-size: 14px;
+  font-weight: lighter;
 }
